@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+  <div class="logo-area">
+    <img src="../Desktop/logo.png">
+  </div>
+  <p class="head-area">Demo for autonomous cars vehicle detection system</p>
+  <div id="vid-area">
+    <video controls="true" autoplay="autoplay" muted="false" loop>
+      <source src="C:/Users/Aroona Ayub/Desktop/Detection_results.mp4" type="video/mp4">
+      <!-- <source src="C:/Users/Aroona Ayub/Desktop/movie.mp4" type="video/mp4"> -->
+    </video>
+  </div>
+  <!-- <button onclick="showBar()">Show Snackbar</button> -->
+  <div id="snackbar">New shock has been detected.</div>
+
+
+
+<!-- /*****************************************************************************************************/ -->
+  <script>
+    function showBar() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    }
+    window.showBar()
+    
+    var delayInMilliseconds = 10000;
+
+    //setTimeout(function() { window.close() }, delayInMilliseconds);
+
+  </script>
+
+<!-- /*****************************************************************************************************/ -->
+</body>
+<style>
+  body {
+    font-family: monospace !important;
+    overflow: hidden;
+    background-color: #C4DACB;
+    /*background-color: #ece9c6;*/
+  }
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  .logo-area {
+    width: 100%;
+  }
+
+  .logo-area img {
+    margin: 0 auto;
+    display: block;
+    width: 15%;
+  }
+
+  .head-area {
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+    color: #000;
+    font-size: 19px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  #vid-area {
+    display: block;
+    height: 797px;
+  }
+
+  #vid-area video {
+    width: 100%;
+    height: 133%;
+    display: block;
+  }
+
+  #snackbar {
+    border-radius: 25px;
+    background-color: #FF9850;
+    bottom: 100px !important;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+</html>
